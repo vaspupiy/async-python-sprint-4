@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  db:
+    # short_links
+    container_name: short_links
+    image: postgres:14.5
+    environment:
+      - POSTGRES_USER=ypuser
+      - POSTGRES_PASSWORD=yppass
+      - POSTGRES_DB=short_links
+    restart: on-failure
+    volumes:
+      - short_links-postgres-data:/var/lib/postgres
+    ports:
+      - 5432:5432
+
+volumes:
+  short_links-postgres-data:
+        
