@@ -1,5 +1,4 @@
 import pytest
-from fastapi.testclient import TestClient
 
 # Импортируем сюда переменную приложения app, инициализированную в файле app.py
 from fastapi import status
@@ -19,5 +18,3 @@ async def test_get_short_link(test_app):
     response = test_app.post('/api/v1/', json={"original-url": "https://dzen.ru/"})
     assert response.status_code == status.HTTP_201_CREATED
 
-# Не знаю, по одному тесты работают. Вместе - нет
-# Разбираться уже времени нет.

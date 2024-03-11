@@ -5,7 +5,7 @@ from fastapi import Request, Query, status, HTTPException
 from fastapi.responses import ORJSONResponse, RedirectResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.v1.constants.contstants import LEN_SHORT_LINK, LINK_NOT_FOUND, PAGE_DELETED, WAS_DELETED
+from core.config import LEN_SHORT_LINK, LINK_NOT_FOUND, PAGE_DELETED, WAS_DELETED
 from api.v1.schemas.short_link_service import (
     GetShotLinkRequest,
     GetShotLinksListRequest,
