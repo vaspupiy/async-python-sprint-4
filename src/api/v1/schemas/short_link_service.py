@@ -3,7 +3,8 @@ from uuid import UUID, uuid4
 
 from pydantic import BaseModel, validator, Field
 
-from api.v1.constants.contstants import ORIGINAL_URL_KEY, HTTP_CHECK, SHORT_URL
+from api.v1.constants.contstants import HTTP_CHECK
+from core.config import ORIGINAL_URL_KEY, SHORT_URL, SHORT_ID
 
 
 class GetShotLinkRequest(BaseModel):
@@ -30,7 +31,7 @@ class ShortLinkBase(BaseModel):
 
 class ShotLinkResponse(ShortLinkBase):
     """Класс ответа на запрос на получения укороченной ссылки"""
-    short_id: str = Field(alias=ORIGINAL_URL_KEY)
+    short_id: str = Field(alias=SHORT_ID)
     short_url: str = Field(alias=SHORT_URL)
 
     class Config:

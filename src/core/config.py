@@ -34,3 +34,10 @@ class AppSettings(BaseSettings):
 app_settings = AppSettings()
 
 PROJECT_URL = f'http://{app_settings.project_host}:{app_settings.project_port}/api/v1/'
+ORIGINAL_URL_KEY: str = "original-url"
+SHORT_ID: str = "short-id"
+SHORT_URL: str = "short-url"
+LEN_SHORT_LINK = 10
+LINK_NOT_FOUND = "link not found"
+PAGE_DELETED = "page deleted"
+WAS_DELETED = "was successfully deleted"
